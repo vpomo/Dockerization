@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y sudo curl 
 
 RUN groupadd -r newuser && useradd -r -g newuser newuser
@@ -22,7 +22,7 @@ RUN mkdir -p /project
 RUN chown -R 999:999 /project
 RUN chmod -R 777 /project
 
-RUN npm install -g npm@9.6.6
+RUN npm install -g npm@9.6.7
 
 RUN npm install -g uuid debug
 RUN npm install -g @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
